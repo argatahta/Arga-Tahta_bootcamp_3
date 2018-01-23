@@ -1,0 +1,44 @@
+<section id="hero" class="login" style="background: #adafaf;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <div id="login">
+          <div class="text-center">
+            <h3>REGISTER FORM</h3>
+          </div>
+          <hr>
+          <form #f="ngForm" (ngSubmit)="register(f)">
+
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class=" form-control" placeholder="Username" name="username" ngModel>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class=" form-control" placeholder="user@email.com" name="email" ngModel>
+            </div>
+            <div class="alert alert-warning" *ngIf="emailError == true">
+              Email example: username@email.com
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class=" form-control" id="password1" placeholder="Password" name="password" ngModel>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="checkboxChecked($event)"> I agree to the Terms of Service.
+              </label>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="submitError == true">
+              Please input All fields and checked Terms of Service Agreement
+            </div>
+
+            <button type="submit" class="btn_full">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
